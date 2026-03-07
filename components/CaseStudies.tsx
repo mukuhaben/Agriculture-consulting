@@ -1,3 +1,7 @@
+"use client";
+
+import { motion, Variants } from "framer-motion";
+
 const cases = [
   {
     title: "Smallholder Moringa Export Program",
@@ -22,28 +26,70 @@ const cases = [
   }
 ];
 
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const card: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6
+    }
+  }
+};
+
 export default function CaseStudies() {
   return (
-    <section id = "case-studies" className="py-24 bg-gray-100">
+    <section id="case-studies" className="py-24 bg-gray-100">
 
       <div className="max-w-7xl mx-auto px-8">
 
-        <h2 className="text-4xl font-bold text-center mb-4">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center mb-4"
+        >
           Case Studies
-        </h2>
+        </motion.h2>
 
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center text-gray-600 max-w-2xl mx-auto mb-16"
+        >
           Selected examples of agricultural development initiatives focused on
           sustainable production systems, market access, and farmer empowerment.
-        </p>
+        </motion.p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
 
           {cases.map((c, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition"
+              variants={card}
+              whileHover={{ y: -8 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-xl transition"
             >
+
               <h3 className="text-lg font-semibold mb-4 text-gray-900">
                 {c.title}
               </h3>
@@ -58,10 +104,10 @@ export default function CaseStudies() {
                 {c.impact}
               </p>
 
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
 

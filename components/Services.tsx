@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const services = [
   {
     title: "Agricultural Supply Chain Development",
@@ -19,25 +23,51 @@ const services = [
 
 export default function Services() {
   return (
-    <section id = "services" className="py-24 bg-gray-50">
+    <section id="services" className="py-24 bg-gray-50">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-center mb-4">
+        {/* TITLE */}
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center mb-4"
+        >
           Consulting Services
-        </h2>
+        </motion.h2>
 
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        {/* DESCRIPTION */}
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center text-gray-600 max-w-2xl mx-auto mb-16"
+        >
           Strategic advisory and implementation support for governments,
           NGOs and agribusiness organizations.
-        </p>
+        </motion.p>
 
+        {/* SERVICES GRID */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {services.map((s, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.15
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                y: -10,
+                scale: 1.03
+              }}
+              className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-xl transition"
             >
 
               <h3 className="text-lg font-semibold mb-3 text-gray-900">
@@ -48,7 +78,7 @@ export default function Services() {
                 {s.desc}
               </p>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>
