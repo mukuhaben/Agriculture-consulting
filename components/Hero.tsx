@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-green-950 via-green-900 to-emerald-800 text-white py-32">
+    <section id = "home" className="relative overflow-hidden bg-gradient-to-br from-green-950 via-green-900 to-emerald-800 text-white py-32">
 
       {/* Floating gradient background */}
       <div className="absolute inset-0 overflow-hidden">

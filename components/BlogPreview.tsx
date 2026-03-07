@@ -17,7 +17,7 @@ const posts = [
 
 export default function BlogPreview() {
   return (
-    <section className="py-24">
+    <section id = "blog" className="py-24">
 
       <div className="max-w-7xl mx-auto px-8">
 

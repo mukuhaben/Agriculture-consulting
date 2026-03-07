@@ -26,13 +26,13 @@ export default function Portfolio() {
   const [active, setActive] = useState<any>(null);
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section id = "projects" className="py-24 bg-gray-50">
 
       <div className="max-w-7xl mx-auto px-8">
 
         <Reveal>
           <h2 className="text-4xl font-bold text-center mb-4">
-            Portfolio
+            Projects Highlights
           </h2>
         </Reveal>
 

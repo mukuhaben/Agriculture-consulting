@@ -1,94 +1,118 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
-
   const [open, setOpen] = useState(false);
 
-  return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/60 border-b border-white/20 shadow-sm">
+  const scrollTo = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setOpen(false);
+    }
+  };
 
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  return (
+    <nav className="sticky top-0 w-full z-50 backdrop-blur-xl bg-white/70 border-b border-white/20">
+
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center">
-
-          <Image
-            src="/images/logo.png"
-            alt="Gideon Consulting"
-            width={180}
-            height={50}
-            priority
-          />
-
-        </Link>
+        <Image
+          src="/images/logo.png"
+          alt="Gideon Consulting"
+          width={180}
+          height={50}
+          priority
+        />
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+        <div className="hidden md:flex items-center gap-6">
 
-          <Link href="/" className="hover:text-green-700 transition">
-            Home
-          </Link>
+          <div className="flex items-center gap-8 px-8 py-3 rounded-full bg-white/80 shadow-md text-sm font-medium text-gray-700">
 
-          <Link href="/services" className="hover:text-green-700 transition">
-            Services
-          </Link>
+            <button onClick={() => scrollTo("home")} className="hover:text-green-700">
+              Home
+            </button>
 
-          <Link href="/portfolio" className="hover:text-green-700 transition">
-            Portfolio
-          </Link>
+            <button onClick={() => scrollTo("services")} className="hover:text-green-700">
+              Services
+            </button>
 
-          <Link href="/case-studies" className="hover:text-green-700 transition">
-            Case Studies
-          </Link>
+            <button onClick={() => scrollTo("projects")} className="hover:text-green-700">
+              Projects
+            </button>
 
-          <Link href="/blog" className="hover:text-green-700 transition">
-            Blog
-          </Link>
+            <button onClick={() => scrollTo("case-studies")} className="hover:text-green-700">
+              Case Studies
+            </button>
 
-          <Link
-            href="/consultation"
-            className="bg-green-700 text-white px-5 py-2 rounded-full shadow hover:bg-green-800 transition"
+            <button onClick={() => scrollTo("blog")} className="hover:text-green-700">
+              Blog
+            </button>
+
+          </div>
+
+          <a
+            href="https://wa.me/254719841598"
+            target="_blank"
+            className="bg-green-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-800"
           >
             Book Consultation →
-          </Link>
+          </a>
 
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-700 text-2xl"
+          className="md:hidden text-3xl text-gray-800"
           onClick={() => setOpen(!open)}
         >
-          ☰
+          {open ? "✕" : "☰"}
         </button>
 
       </div>
 
-      {/* Mobile Menu */}
-      {open && (
+      {/* Mobile Dropdown Menu */}
+      <div
+        className={`md:hidden bg-green-700 text-white overflow-hidden transition-all duration-300 ${
+          open ? "max-h-96 py-6" : "max-h-0"
+        }`}
+      >
+        <div className="flex flex-col gap-6 px-6 text-lg font-medium">
 
-        <div className="md:hidden px-6 pb-6 flex flex-col gap-4 text-gray-700 bg-white/90 backdrop-blur-lg">
+          <button onClick={() => scrollTo("home")} className="text-left">
+            Home
+          </button>
 
-          <Link href="/">Home</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/portfolio">Portfolio</Link>
-          <Link href="/case-studies">Case Studies</Link>
-          <Link href="/blog">Blog</Link>
+          <button onClick={() => scrollTo("services")} className="text-left">
+            Services
+          </button>
 
-          <Link
-            href="/consultation"
-            className="bg-green-700 text-white px-4 py-2 rounded-md w-fit"
+          <button onClick={() => scrollTo("projects")} className="text-left">
+            Projects
+          </button>
+
+          <button onClick={() => scrollTo("case-studies")} className="text-left">
+            Case Studies
+          </button>
+
+          <button onClick={() => scrollTo("blog")} className="text-left">
+            Blog
+          </button>
+
+          <a
+            href="https://wa.me/254719841598"
+            target="_blank"
+            className="bg-white text-green-700 px-5 py-3 rounded-md w-fit font-medium"
           >
             Book Consultation
-          </Link>
+          </a>
 
         </div>
-
-      )}
+      </div>
 
     </nav>
   );
