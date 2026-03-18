@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-<nav className="sticky top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 bg-black/100 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+<nav className="fixed top-0 left-0 w-full z-[999] backdrop-blur-xl border-b border-white/10 bg-black/80 shadow-[0_4px_30px_rgba(0,0,0,0.6)] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
 
         {/* Logo */}
@@ -55,7 +55,7 @@ export default function Navbar() {
           </div>
 
           <a
-            href="https://wa.me/254719841598"
+            href="mailto:Nandwagideon@gmail.com?subject=Consultation%20Request"
             target="_blank"
             className="hover:text-yellow-400 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-800"
           >
