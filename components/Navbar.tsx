@@ -15,41 +15,40 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 w-full z-50 backdrop-blur-xl bg-white/70 border-b border-white/20">
-
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<nav className="sticky top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 bg-black/10 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
 
         {/* Logo */}
-        <Image
-          src="/images/logo.png"
-          alt="Gideon Consulting"
+          <Image
+          src="/images/main.png"
+          alt="Gideon Agriculture"
           width={180}
           height={50}
-          priority
-        />
+          className="object-contain drop-shadow-[0_0_10px_rgba(255,211,77,0.5)]"
+          />
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
 
-          <div className="flex items-center gap-8 px-8 py-3 rounded-full bg-white/80 shadow-md text-sm font-medium text-gray-700">
+          <div className="flex items-center gap-8 px-8 py-3 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-sm font-medium text-white">
 
-            <button onClick={() => scrollTo("home")} className="hover:text-green-700">
+            <button onClick={() => scrollTo("home")} className="hover:hover:text-yellow-400">
               Home
             </button>
 
-            <button onClick={() => scrollTo("services")} className="hover:text-green-700">
+            <button onClick={() => scrollTo("services")} className="hover:text-yellow-400">
               Services
             </button>
 
-            <button onClick={() => scrollTo("projects")} className="hover:text-green-700">
+            <button onClick={() => scrollTo("projects")} className="hover:text-yellow-400">
               Projects
             </button>
 
-            <button onClick={() => scrollTo("case-studies")} className="hover:text-green-700">
+            <button onClick={() => scrollTo("case-studies")} className="hover:text-yellow-400">
               Case Studies
             </button>
 
-            <button onClick={() => scrollTo("blog")} className="hover:text-green-700">
+            <button onClick={() => scrollTo("blog")} className="hover:text-yellow-400">
               Blog
             </button>
 
@@ -58,7 +57,7 @@ export default function Navbar() {
           <a
             href="https://wa.me/254719841598"
             target="_blank"
-            className="bg-green-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-800"
+            className="hover:text-yellow-400 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-800"
           >
             Book Consultation →
           </a>
@@ -67,7 +66,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-3xl text-gray-800"
+          className="md:hidden text-3xl text-white-800"
           onClick={() => setOpen(!open)}
         >
           {open ? "✕" : "☰"}

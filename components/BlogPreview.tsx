@@ -17,15 +17,15 @@ const posts = [
 
 export default function BlogPreview() {
   return (
-    <section id = "blog" className="py-24">
+    <section id = "blog" className="py-0">
 
       <div className="max-w-7xl mx-auto px-8">
 
-        <h2 className="text-4xl font-bold text-center mb-4">
+        <h2 className="gold-text text-3xl font-semibold text-center mb-4">
           Insights
         </h2>
 
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        <p className="text-center text-white-600 max-w-2xl mx-auto mb-16">
           Articles and perspectives on sustainable agriculture,
           agribusiness development, and climate-resilient farming systems.
         </p>
@@ -35,19 +35,19 @@ export default function BlogPreview() {
           {posts.map((p, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition"
+              className="bg-black/30 backdrop-blur-md p-8 rounded-xl border border-gray-200 hover:shadow-lg transition"
             >
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">
+              <h3 className="text-lg font-semibold mb-3 text-gray-500">
                 {p.title}
               </h3>
 
-              <p className="text-gray-600 text-sm leading-relaxed mb-5">
+              <p className="text-white-600 text-sm leading-relaxed mb-5">
                 {p.desc}
               </p>
 
               <Link
                 href="/blog"
-                className="text-green-700 font-semibold text-sm hover:underline"
+                className="text-white-900 font-semibold text-sm hover:underline"
               >
                 Read article →
               </Link>

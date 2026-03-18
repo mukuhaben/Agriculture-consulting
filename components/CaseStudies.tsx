@@ -48,7 +48,7 @@ const card: Variants = {
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className="py-24 bg-gray-100">
+    <section id="case-studies" className="py-10 bg-gray-48">
 
       <div className="max-w-7xl mx-auto px-8">
 
@@ -57,7 +57,7 @@ export default function CaseStudies() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-4"
+          className="gold-text text-3xl font-semibold text-center mb-4"
         >
           Case Studies
         </motion.h2>
@@ -67,7 +67,7 @@ export default function CaseStudies() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center text-gray-600 max-w-2xl mx-auto mb-16"
+          className="text-center text-white-600 max-w-2xl mx-auto mb-16"
         >
           Selected examples of agricultural development initiatives focused on
           sustainable production systems, market access, and farmer empowerment.
@@ -87,20 +87,20 @@ export default function CaseStudies() {
               variants={card}
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-xl transition"
+              className="bg-black/30 backdrop-blur-md p-8 rounded-xl border border-gray-200 hover:shadow-xl transition"
             >
 
-              <h3 className="text-lg font-semibold mb-4 text-gray-900">
+              <h3 className="text-lg font-semibold mb-4 text-gray-500">
                 {c.title}
               </h3>
 
-              <p className="text-sm text-gray-600 mb-4">
-                <span className="font-semibold text-gray-800">Challenge:</span>{" "}
+              <p className="text-sm text-white-600 mb-4">
+                <span className="font-semibold text-gray-400">Challenge:</span>{" "}
                 {c.problem}
               </p>
 
-              <p className="text-sm text-gray-600">
-                <span className="font-semibold text-gray-800">Approach:</span>{" "}
+              <p className="text-sm text-white-600">
+                <span className="font-semibold text-gray-400">Approach:</span>{" "}
                 {c.impact}
               </p>
 

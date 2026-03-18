@@ -26,18 +26,18 @@ export default function Portfolio() {
   const [active, setActive] = useState<any>(null);
 
   return (
-    <section id = "projects" className="py-24 bg-gray-50">
+    <section id = "projects" className="py-0 bg-gray-48">
 
       <div className="max-w-7xl mx-auto px-8">
 
         <Reveal>
-          <h2 className="text-4xl font-bold text-center mb-4">
+          <h2 className="gold-text text-3xl font-semibold text-center mb-4">
             Projects Highlights
           </h2>
         </Reveal>
 
         <Reveal>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+          <p className="text-center text-white-600 max-w-2xl mx-auto mb-16">
             Selected agricultural value chains and development projects
             designed to improve sustainability, farmer income,
             and global market access.

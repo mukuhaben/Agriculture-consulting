@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pb-40 w-full overflow-hidden flex items-center"
+      className="relative min-h-screen pb-40 sm:pb-52 w-full overflow-hidden flex items-center"
     >
       {/* BACKGROUND IMAGE */}
       <motion.div
@@ -57,7 +57,7 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="max-w-[640px] lg:ml-10"
+          className="max-w-[640px] lg:ml-8"
         >
           {/* HEADING */}
           <motion.h1
@@ -86,32 +86,66 @@ export default function Hero() {
             </span>
           </motion.p>
 
-          {/* BUTTONS */}
+          {/* CONTACT INFO */}
           <motion.div
             variants={item}
-            className="flex flex-col sm:flex-row gap-4 mt-10"
+            className="mt-8 sm:mt-10 text-[14px] sm:text-[15px] text-[#1f2319]"
           >
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: "spring", stiffness: 260 }}
-              href={whatsappLink}
-              target="_blank"
-              className="bg-[#1B8E3E] hover:bg-[#167834] text-white px-8 py-[16px] rounded-[12px] font-semibold text-[16px] shadow-lg transition text-center"
-            >
-              Book Consultation →
-            </motion.a>
+            <div className="flex flex-col gap-3 sm:gap-2 bg-white/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-0 p-3 sm:p-0 rounded-lg inline-block">
 
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: "spring", stiffness: 260 }}
-              href={whatsappLink}
-              target="_blank"
-              className="bg-white border border-gray-300 hover:bg-gray-50 px-8 py-[16px] rounded-[12px] font-semibold text-[16px] text-gray-800 shadow-md transition text-center"
-            >
-              Get In Touch
-            </motion.a>
+              {/* PHONE */}
+              <div className="flex items-center gap-2">
+                <span className="text-base">📞</span>
+                <a
+                  href="tel:+254719841598"
+                  className="hover:text-[#1B8E3E] transition break-all"
+                >
+                  +254 719 841 598
+                </a>
+              </div>
+
+              {/* EMAIL */}
+              <div className="flex items-center gap-2">
+                <span className="text-base">✉️</span>
+                <a
+                  href="mailto:info@youragri.co.ke?subject=Consultation%20Request"
+                  className="hover:text-[#1B8E3E] transition break-all"
+                >
+                  info@youragri.co.ke
+                </a>
+              </div>
+
+              {/* LINKEDIN */}
+              <div className="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#0A66C2] shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 
+                  5-5v-14c0-2.761-2.239-5-5-5zm-11 
+                  19h-3v-10h3v10zm-1.5-11.268c-.966 
+                  0-1.75-.784-1.75-1.75s.784-1.75 
+                  1.75-1.75 1.75.784 
+                  1.75 1.75-.784 1.75-1.75 
+                  1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.057-1.864-3.057-1.865 
+                  0-2.151 1.455-2.151 2.963v5.698h-3v-10h2.881v1.367h.041c.401-.761 
+                  1.381-1.563 2.844-1.563 3.041 0 3.604 
+                  2.002 3.604 4.604v5.592z"/>
+                </svg>
+
+                <a
+                  href="https://www.linkedin.com/in/gideon-nandwa-70b332118/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#1B8E3E] transition break-all"
+                >
+                  linkedin.com/in/gideon-nandwa
+                </a>
+              </div>
+
+            </div>
           </motion.div>
         </motion.div>
       </div>
@@ -124,7 +158,7 @@ export default function Hero() {
         className="absolute bottom-0 left-0 w-full z-30"
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pb-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-4">
             <Stat number="150+" label="Projects Delivered" />
             <Stat number="20+" label="Countries" />
             <Stat number="12+" label="Years Experience" />
