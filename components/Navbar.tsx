@@ -15,12 +15,12 @@ export default function Navbar() {
   };
 
   return (
-<nav className="sticky top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 bg-black/10 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
+<nav className="sticky top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 bg-black/100 shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
       <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
 
         {/* Logo */}
           <Image
-          src="/images/main.png"
+          src="/images/mainn.png"
           alt="Gideon Agriculture"
           width={180}
           height={50}

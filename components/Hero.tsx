@@ -89,16 +89,16 @@ export default function Hero() {
           {/* CONTACT INFO */}
           <motion.div
             variants={item}
-            className="mt-8 sm:mt-10 text-[14px] sm:text-[15px] text-[#1f2319]"
+            className="mt-8 sm:mt-10 text-[14px] sm:text-[25px] text-[#1f2319]"
           >
-            <div className="flex flex-col gap-3 sm:gap-2 bg-white/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-0 p-3 sm:p-0 rounded-lg inline-block">
+            <div className="flex flex-col gap-4 sm:gap-2 bg-white/70 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-0 p-3 sm:p-0 rounded-lg inline-block">
 
               {/* PHONE */}
               <div className="flex items-center gap-2">
                 <span className="text-base">📞</span>
                 <a
                   href="tel:+254719841598"
-                  className="hover:text-[#1B8E3E] transition break-all"
+                  className="hover:text-[#c0eb3c] transition break-all"
                 >
                   +254 719 841 598
                 </a>
@@ -108,10 +108,10 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <span className="text-base">✉️</span>
                 <a
-                  href="mailto:info@youragri.co.ke?subject=Consultation%20Request"
-                  className="hover:text-[#1B8E3E] transition break-all"
+                  href="mailto:Nandwagideon@gmail.com?subject=Consultation%20Request"
+                  className="hover:text-[#c0eb3c] transition break-all"
                 >
-                  info@youragri.co.ke
+                  Nandwagideon@gmail.com
                 </a>
               </div>
 
@@ -119,7 +119,7 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#0A66C2] shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#c0eb3c] shrink-0"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -139,7 +139,7 @@ export default function Hero() {
                   href="https://www.linkedin.com/in/gideon-nandwa-70b332118/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#1B8E3E] transition break-all"
+                  className="hover:text-[#c0eb3c] transition break-all"
                 >
                   linkedin.com/in/gideon-nandwa
                 </a>
